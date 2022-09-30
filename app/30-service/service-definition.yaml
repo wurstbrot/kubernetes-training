@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service              # Kind of the K8S Resource
+metadata:
+  name: sa-frontend-lb
+spec:
+  type: LoadBalancer       # Balances workload between pods
+  ports:
+    - port: 8080               # Port under which the service receives requests
+      protocol: TCP
+      targetPort: 80         # Port at which incoming requests are forwarded to
+  selector:                # Object containing properties for selecting pods
+    app: sa-frontend       # # Filters target pods

@@ -2,7 +2,7 @@
 Minimum Kubernetes version 1.16
 
 # Preparation
-## Preparation of k3s
+## Preparation of k3s on ubuntu
 ```shell
 curl -sfL https://get.k3s.io | sh -s - --docker
 
