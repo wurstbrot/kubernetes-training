@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hello-world
+  namespace: argocd
+spec:
+  destination:
+    name: ''
+    namespace: hello-world
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: 'applications'
+    repoURL: 'https://github.com/wurstbrot/kustomize-training.git'
+    targetRevision: main
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
