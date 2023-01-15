@@ -12,7 +12,7 @@ data:
     http {
       server {
           listen       80;
-          gzipX: on
+          gzipX        on;
           server_name  localhost;
           location / {
             root   /usr/share/nginx/html; #Change this line
